@@ -1,0 +1,150 @@
+import React from 'react';
+import { Phone, MapPin, MessageCircle, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Button } from './button';
+
+const contactInfo = [
+  {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    value: '+256 752 993 659',
+    href: 'https://wa.me/256752993659'
+  },
+  {
+    icon: Phone,
+    label: 'Office Line',
+    value: '0392003458',
+    href: 'tel:0392003458'
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    value: 'Salama Rd, Sseruganda Plaza, Kampala',
+    href: 'https://maps.google.com'
+  }
+];
+
+const socialLinks = [
+  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Twitter, href: '#', label: 'Twitter' }
+];
+
+export const ContactSection: React.FC = () => {
+  return (
+    <section id="contact" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Get In{' '}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Touch
+              </span>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to transform your home? Contact us today for your free consultation and site visit.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                {contactInfo.map((contact, index) => {
+                  const Icon = contact.icon;
+                  return (
+                    <a 
+                      key={index}
+                      href={contact.href}
+                      target={contact.href.startsWith('http') ? '_blank' : undefined}
+                      rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="flex items-center gap-4 p-4 bg-background rounded-xl hover:shadow-card transition-all duration-300 group"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">{contact.label}</div>
+                        <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {contact.value}
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Social Links */}
+              <div className="pt-8 border-t border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
+                <div className="flex gap-4">
+                  {socialLinks.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
+                        aria-label={social.label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Card */}
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/20">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Ready to Start Your Project?
+                </h3>
+                <p className="text-muted-foreground mb-8">
+                  Book your free site visit today and let's bring your vision to life. 
+                  No obligations, just expert advice and beautiful designs.
+                </p>
+                
+                <div className="space-y-4">
+                  <Button 
+                    variant="hero" 
+                    size="xl"
+                    className="w-full"
+                    asChild
+                  >
+                    <a 
+                      href="https://forms.google.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      Book My Free Site Visit
+                    </a>
+                  </Button>
+                  
+                  <Button 
+                    variant="whatsapp" 
+                    size="lg"
+                    className="w-full"
+                    asChild
+                  >
+                    <a 
+                      href="https://wa.me/256752993659" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="h-5 w-5 mr-2" />
+                      Chat on WhatsApp
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
