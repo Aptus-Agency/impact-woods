@@ -5,16 +5,10 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg" alt="Modern kitchen interior by Impact Woods" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
-      </div>
-
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)]">
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="max-w-4xl mx-auto text-center lg:text-left">
+      <div className="flex flex-row z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="mx-auto text-center lg:text-left w-1/2">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
               Transform Your Home With{' '}
@@ -22,21 +16,21 @@ export const HeroSection: React.FC = () => {
                 Hassle-Free Craftsmanship
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
               From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                variant="hero" 
+              <Button
+                variant="hero"
                 size="xl"
                 className="group"
                 asChild
               >
-                <a 
-                  href="https://forms.google.com" 
-                  target="_blank" 
+                <a
+                  href="https://forms.google.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
@@ -44,16 +38,16 @@ export const HeroSection: React.FC = () => {
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              
-              <Button 
-                variant="whatsapp" 
+
+              <Button
+                variant="whatsapp"
                 size="xl"
                 className="group"
                 asChild
               >
-                <a 
-                  href="https://wa.me/256752993659" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/256752993659"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
@@ -63,6 +57,16 @@ export const HeroSection: React.FC = () => {
               </Button>
             </div>
           </div>
+        </div>
+
+        <div className="relative w-[500px] h-[500px]">
+          <Image
+            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg"
+            alt="Modern kitchen interior by Impact Woods"
+            fill
+            className="object-cover"
+            priority // Recommended for LCP images
+          />
         </div>
       </div>
 
