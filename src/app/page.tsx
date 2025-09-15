@@ -6,14 +6,18 @@ import { Navigation } from "./components/navigation";
 import { ProcessSection } from "./components/process-section";
 import { ProductsSection } from "./components/products-section";
 import { TestimonialsSection } from "./components/testimonials-section";
+import { WhatWeDoSection } from "./components/what-we-do-section";
+import { WhyChooseUsSection } from "./components/why-choose-us-section";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      {/* <Navigation /> */}
       <HeroSection />
       <AboutSection />
+      <WhatWeDoSection />
       <ProductsSection />
+      <WhyChooseUsSection />
       <TestimonialsSection />
       <ProcessSection />
       <ContactSection />

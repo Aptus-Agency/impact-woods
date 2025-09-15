@@ -1,81 +1,102 @@
-import React from 'react';
-import { Button } from './button';
-import { ArrowRight, MessageCircle } from 'lucide-react';
-import Image from 'next/image';
+import { Button } from "./button";
+import { Navigation } from "./navigation";
+import { Input } from "./ui/input";
+import Image from "next/image";
 
-export const HeroSection: React.FC = () => {
+export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)]">
-      {/* Content */}
-      <div className="flex flex-row z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="mx-auto text-center lg:text-left w-1/2">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-              Transform Your Home With{' '}
-              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                Hassle-Free Craftsmanship
-              </span>
-            </h1>
+    <section className="min-h-screen bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative overflow-hidden">
+      <Navigation />
 
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-              From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
-            </p>
+      <div className="container mx-auto max-w-6xl px-6 py-20 flex flex-col lg:flex-row items-center justify-between relative z-10">
+        {/* Left Content */}
+        <div className="flex-1 lg:pr-12 mb-12 lg:mb-0 w-[60%]">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
+            Transform your home with<br />
+            <span className="text-secondary">Hassle free Craftsmanship</span>
+          </h1>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                variant="hero"
-                size="xl"
-                className="group"
-                asChild
-              >
-                <a
-                  href="https://forms.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  Book My Free Site Visit
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
+          <p className="text-lg text-primary-foreground/80 mb-8 max-w-md leading-relaxed">
+            From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
+          </p>
 
-              <Button
-                variant="whatsapp"
-                size="xl"
-                className="group"
-                asChild
-              >
-                <a
-                  href="https://wa.me/256752993659"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  Chat Now for Info
-                </a>
-              </Button>
+          {/* Email Signup */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
+            <Input
+              type="email"
+              placeholder="Email"
+              className="flex-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 rounded-full px-6 py-3"
+            />
+            <Button variant="hero" size="lg" className="rounded-full px-8">
+              Submit Button
+            </Button>
+          </div>
+
+          {/* Statistics */}
+          <div className="flex space-x-12">
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">33</div>
+              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">100</div>
+              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Project</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">100</div>
+              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Client</div>
             </div>
           </div>
         </div>
 
-        <div className="relative w-[500px] h-[500px]">
-          <Image
-            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg"
-            alt="Modern kitchen interior by Impact Woods"
-            fill
-            className="object-cover"
-            priority // Recommended for LCP images
-          />
+        {/* Right Images with Arch Shapes */}
+        <div className="flex-1 relative w-[40%]">
+          <div className="relative w-full max-w-2xl mx-auto">
+            {/* Large Arch Image */}
+            <div className="relative w-80 h-96 mb-8 ml-auto">
+              <div
+                className="w-full h-full rounded-t-full overflow-hidden shadow-arch"
+                style={{
+                  clipPath: "ellipse(50% 50% at 50% 50%)"
+                }}
+              >
+                <Image
+                  src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+                  alt="Modern luxury kitchen interior"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Smaller Eclipse Image */}
+            <div className="absolute -bottom-8 -left-4 w-64 h-80">
+              <div
+                className="w-full h-full overflow-hidden shadow-arch"
+                style={{
+                  clipPath: "ellipse(45% 50% at 50% 50%)",
+                  borderRadius: "50%"
+                }}
+              >
+                <Image
+                  src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+                  alt="Contemporary kitchen island design"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
-        </div>
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-foreground/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
     </section>
   );
 };
+
+export default HeroSection;
