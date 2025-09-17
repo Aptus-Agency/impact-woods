@@ -1,6 +1,5 @@
 import { Button } from "./button";
 import { Navigation } from "./navigation";
-import { Input } from "./ui/input";
 import Image from "next/image";
 
 export const HeroSection = () => {
@@ -20,13 +19,10 @@ export const HeroSection = () => {
             From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
           </p>
 
-          {/* Email Signup */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
-            <Input
-              type="email"
-              placeholder="Email"
-              className="flex-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 rounded-full px-6 py-3"
-            />
+            <Button variant="hero" size="lg" className="rounded-full px-8">
+              Submit Button
+            </Button>
             <Button variant="hero" size="lg" className="rounded-full px-8">
               Submit Button
             </Button>
@@ -34,23 +30,24 @@ export const HeroSection = () => {
         </div>
 
         <div className="basis-[50%]">
-          <div className="flex flex-row gap-3">
-            <Image
-              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
-              alt="Modern luxury kitchen interior"
-              width={300}
-              height={50}
-              className="rounded-t-[200px]"
-            />
+          <div className="flex flex-row items-center gap-3">
+            <div className="relative w-[300px] h-[500px] rounded-t-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
+              <Image
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+                alt="Modern luxury kitchen interior"
+                fill
+                className="object-cover w-full h-full"
+              />
+            </div>
 
-
-            <Image
-              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
-              alt="Contemporary kitchen island design"
-              width={300}
-              height={50}
-              className="rounded-t-[200px] rounded-b-[200px]"
-            />
+            <div className="relative w-[200px] h-[300px] rounded-t-[200px] rounded-b-[200px] overflow-hidden">
+              <Image
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+                alt="Contemporary kitchen island design"
+                fill
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </div>
