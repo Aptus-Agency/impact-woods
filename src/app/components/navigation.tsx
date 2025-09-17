@@ -28,7 +28,12 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616133/impact-woods/wpesbdnnvhw1iuqt0uo7.png" alt="Logo" width={100} height={100} />
+            <Image 
+              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616133/impact-woods/wpesbdnnvhw1iuqt0uo7.png" 
+              alt="Logo" 
+              width={80} 
+              height={80}
+              className="" />
           </div>
 
           {/* Desktop Navigation */}

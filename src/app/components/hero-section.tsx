@@ -5,13 +5,13 @@ import Image from "next/image";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative overflow-hidden">
+    <section className="min-h-[90vh] bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative overflow-hidden">
       <Navigation />
 
-      <div className="container mx-auto max-w-6xl px-6 py-20 flex flex-col lg:flex-row items-center justify-between relative z-10">
+      <div className="relative mx-auto max-w-6xl flex flex-col lg:flex-row items-center justify-between z-10">
         {/* Left Content */}
-        <div className="flex-1 lg:pr-12 mb-12 lg:mb-0 w-[60%]">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
+        <div className="flex-1 mb-12 lg:mb-0 basis-[50%]">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
             Transform your home with<br />
             <span className="text-secondary">Hassle free Craftsmanship</span>
           </h1>
@@ -31,69 +31,28 @@ export const HeroSection = () => {
               Submit Button
             </Button>
           </div>
-
-          {/* Statistics */}
-          <div className="flex space-x-12">
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">33</div>
-              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">100</div>
-              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Project</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">100</div>
-              <div className="text-primary-foreground/70 text-sm uppercase tracking-wider">Client</div>
-            </div>
-          </div>
         </div>
 
-        {/* Right Images with Arch Shapes */}
-        <div className="flex-1 relative w-[40%]">
-          <div className="relative w-full max-w-2xl mx-auto">
-            {/* Large Arch Image */}
-            <div className="relative w-80 h-96 mb-8 ml-auto">
-              <div
-                className="w-full h-full rounded-t-full overflow-hidden shadow-arch"
-                style={{
-                  clipPath: "ellipse(50% 50% at 50% 50%)"
-                }}
-              >
-                <Image
-                  src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
-                  alt="Modern luxury kitchen interior"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+        <div className="basis-[50%]">
+          <div className="flex flex-row gap-3">
+            <Image
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+              alt="Modern luxury kitchen interior"
+              width={300}
+              height={50}
+              className="rounded-t-[200px]"
+            />
 
-            {/* Smaller Eclipse Image */}
-            <div className="absolute -bottom-8 -left-4 w-64 h-80">
-              <div
-                className="w-full h-full overflow-hidden shadow-arch"
-                style={{
-                  clipPath: "ellipse(45% 50% at 50% 50%)",
-                  borderRadius: "50%"
-                }}
-              >
-                <Image
-                  src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
-                  alt="Contemporary kitchen island design"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+
+            <Image
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+              alt="Contemporary kitchen island design"
+              width={300}
+              height={50}
+              className="rounded-t-[200px] rounded-b-[200px]"
+            />
           </div>
         </div>
-      </div>
-
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-foreground/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
     </section>
   );
