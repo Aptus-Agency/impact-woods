@@ -36,7 +36,7 @@ export const WhatWeDoSection: React.FC = () => {
   return (
     <section id="what-we-do" className="py-20 bg-background">
       <div className="container mx-auto px-8 max-w-6xl lg:px-8">
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             What We Do
           </h2>
@@ -44,7 +44,7 @@ export const WhatWeDoSection: React.FC = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus 
             nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {

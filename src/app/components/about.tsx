@@ -22,11 +22,12 @@ const highlights = [
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto rounded-lg max-w-6xl p-16 bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)]">
-        <div className="mx-auto flex flex-row items-center gap-4">
-          <div>
-            <div className="relative w-[300px] h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
+    <section id="about" className="py-20 bg-muted/30 relative">
+      <div className="container mx-auto rounded-lg max-w-6xl p-16 bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative mt-5">
+        <div className="mx-auto flex flex-row items-center gap-8">
+          <div className="relative">
+            {/* Image container that extends beyond the parent */}
+            <div className="relative w-[400px] h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF] mt-[-120px]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
                 alt="Modern luxury kitchen interior"
@@ -53,30 +54,6 @@ export const AboutSection: React.FC = () => {
               </p>
             </div>
           </div>
-
-          {/* <div className="grid md:grid-cols-3 gap-8">
-            {highlights.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div 
-                  key={index}
-                  className="text-center p-8 bg-background rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-white" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {highlight.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground">
-                    {highlight.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div> */}
         </div>
       </div>
     </section>
