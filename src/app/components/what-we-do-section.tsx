@@ -1,23 +1,23 @@
 import React from 'react';
-import { Utensils, Monitor, RotateCcw, Settings } from 'lucide-react';
+import { RotateCcw, Settings, ShieldCheck } from 'lucide-react';
 
 const services = [
   {
-    icon: Monitor,
+    icon: ShieldCheck,
     title: 'Completely Risk-Free Experience',
     description: 'Free site visit, 3D design visualization, and detailed quotation. Zero upfront costs, zero obligations until you\'re 100% satisfied.',
     learnMore: 'Book Now',
     className: 'bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] text-white'
   },
   {
-    icon: RotateCcw,
+    icon: ShieldCheck,
     title: '13+ Years of Ugandan Excellence',
     description: 'Over 500 satisfied homeowners across Kampala, Wakiso, and Mukono trust us with their most important spaces since 2011.',
     learnMore: 'Book Now',
     className: 'bg-background border border-border'
   },
   {
-    icon: Settings,
+    icon: ShieldCheck,
     title: 'Precision-Crafted for Your Life',
     description: 'Every kitchen, closet, and door is custom-designed to match your exact lifestyle, space requirements, and aesthetic preferences.',
     learnMore: 'Book Now',

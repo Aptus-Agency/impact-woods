@@ -44,13 +44,12 @@ export const AboutSection: React.FC = () => {
 
             <div className="max-w-4xl mx-auto">
               <p className="text-lg md:text-xl text-white leading-relaxed mb-8">
-                At Impact Woods, we believe your home should inspire comfort, beauty, and functionality.
-                For over a decade, we've specialized in crafting premium kitchens, closets, doors, and
-                frames designed to simplify life.
+                At Impact Woods, we believe in simplifying life for you through products that truly work. We create appealing kitchen cabinets, closets, and doors with modern designs that are simply timeless, while giving you a fully simplified experience every step of the way.
               </p>
 
-              <p className="text-xl md:text-2xl font-semibold text-white">
-                Our promise is simple: hassle-free design, precision installation, and long-lasting quality.
+              <p>
+                Why work with us? Because we genuinely care. We care that you get the right product—one that's durable and built to last. We care to deliver everything we've promised and more. We care to listen when challenges arise and make things right, using every experience to improve. Most importantly, we care enough to ensure you get your full money's worth.
+                We're here to simplify your life.
               </p>
             </div>
           </div>

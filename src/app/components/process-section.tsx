@@ -40,7 +40,7 @@ export const ProcessSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               What happens after you book
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
               Our streamlined process ensures you get the best results with minimal hassle. 
               From initial contact to final installation.
             </p>
@@ -78,9 +78,9 @@ export const ProcessSection: React.FC = () => {
             })}
           </div>
 
-          <div className="text-center">
+          {/* <div className="text-center">
             <Button 
-              variant="hero" 
+              variant="default" 
               size="xl"
               className="bg-white text-slate-800 hover:bg-gray-100"
               asChild
@@ -93,7 +93,7 @@ export const ProcessSection: React.FC = () => {
                 Book My Free Site Visit Today
               </a>
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

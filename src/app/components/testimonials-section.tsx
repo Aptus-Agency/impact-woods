@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,21 +11,21 @@ const testimonials = [
     location: 'Kampala',
     rating: 5,
     text: 'Impact Woods transformed our kitchen beyond our expectations. The attention to detail and quality of craftsmanship is outstanding. Highly recommended!',
-    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758142912/impact-woods/tdyydvn0rojua6jqgyr7.jpg'
+    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758175225/impact-woods/fbxqonjhzxe2jcfavrhb.jpg'
   },
   {
     name: 'David Ssembatya',
     location: 'Wakiso',
     rating: 5,
     text: 'Professional team, timely delivery, and excellent quality. Our custom closets are not just beautiful but incredibly functional.',
-    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758142912/impact-woods/tdyydvn0rojua6jqgyr7.jpg'
+    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758175225/impact-woods/fbxqonjhzxe2jcfavrhb.jpg'
   },
   {
     name: 'Grace Nakato',
     location: 'Mukono',
     rating: 5,
     text: 'From consultation to installation, the entire process was seamless. The free site visit and 3D designs helped us make the perfect choices.',
-    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758142912/impact-woods/tdyydvn0rojua6jqgyr7.jpg'
+    avatar: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758175225/impact-woods/fbxqonjhzxe2jcfavrhb.jpg'
   }
 ];
 
@@ -100,14 +100,8 @@ export const TestimonialsSection: React.FC = () => {
                     
                     {/* Customer Info */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-full overflow-hidden">
-                        <Image 
-                          src={currentTestimonial.avatar} 
-                          alt={currentTestimonial.name}
-                          width={48}
-                          height={48}
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-12 h-12 rounded-full border overflow-hidden flex items-center justify-center">
+                        <User className="w-8 h-8 text-white" />
                       </div>
                       <div>
                         <div className="font-semibold text-white text-lg">{currentTestimonial.name}</div>

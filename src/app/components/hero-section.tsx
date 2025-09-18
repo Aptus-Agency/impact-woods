@@ -21,10 +21,10 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
             <Button variant="hero" size="lg" className="rounded-full px-8">
-              Submit Button
+              Book My Free site Visit
             </Button>
-            <Button variant="hero" size="lg" className="rounded-full px-8">
-              Submit Button
+            <Button variant="hero" size="lg" className="rounded-full px-8 bg-secondary text-primary-foreground">
+              Chat With Us now
             </Button>
           </div>
         </div>
@@ -42,7 +42,7 @@ export const HeroSection = () => {
 
             <div className="relative w-[200px] h-[300px] rounded-t-[200px] rounded-b-[200px] overflow-hidden">
               <Image
-                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616146/impact-woods/gzuslvfojmfyrhahkkyo.jpg'}
                 alt="Contemporary kitchen island design"
                 fill
                 className="object-cover w-full h-full"

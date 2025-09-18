@@ -43,8 +43,10 @@ export const WhyChooseUsSection: React.FC = () => {
                 Why Impact Woods
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                At Impact Woods, we believe your home should inspire comfort, beauty, and functionality. For over a decade, we&apos;ve specialized in crafting premium kitchens, closets, doors, and frames designed to simplify life. Our promise is simple: hassle-free design, precision installation, and long-lasting quality.
+                At Impact Woods, we believe your home should inspire comfort, beauty, and functionality. For over a decade, we&apos;ve specialized in crafting premium kitchens, closets, doors, and frames designed to simplify life. 
               </p>
+
+              <p className="text-xl text-muted-foreground"><span className="font-semibold text-foreground">Our promise is simple:</span> hassle-free design, precision installation, and long-lasting quality.</p>
             </div>
 
             {/* Benefits list */}

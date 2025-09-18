@@ -16,7 +16,6 @@ const navItems: NavItem[] = [
   { name: 'About Us', href: '#about' },
   { name: 'Products', href: '#products' },
   { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact', isButton: true },
 ];
 
 export const Navigation: React.FC = () => {
@@ -28,50 +27,35 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Image 
-              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616133/impact-woods/wpesbdnnvhw1iuqt0uo7.png" 
-              alt="Logo" 
-              width={80} 
+            <Image
+              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1757616133/impact-woods/wpesbdnnvhw1iuqt0uo7.png"
+              alt="Logo"
+              width={80}
               height={80}
               className="" />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex flex-row items-center gap-12">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                item.isButton ? (
-                  <Button
-                    key={item.name}
-                    variant="hero"
-                    size="sm"
-                    asChild
-                  >
-                    <a href={item.href}>{item.name}</a>
-                  </Button>
-                ) : (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-white transition-colors duration-200 font-medium"
-                  >
-                    {item.name}
-                  </a>
-                )
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
               ))}
             </div>
-          </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <div>
+            <Button variant="hero" className="rounded-full px-8 bg-secondary" size="lg">
+              Contact
             </Button>
           </div>
+          </div>
+
         </div>
 
         {/* Mobile Navigation */}
