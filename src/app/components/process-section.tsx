@@ -1,42 +1,48 @@
 import React from 'react';
-import { MessageCircle, Home, FileText } from 'lucide-react';
+import { MessageCircle, Home, FileText, ArrowRight } from 'lucide-react';
 import { Button } from './button';
 
 const steps = [
   {
     icon: MessageCircle,
-    number: '01',
-    title: 'Confirmation via WhatsApp',
+    title: 'Contact Us',
     description: 'Once you book, we\'ll reach out immediately to confirm your appointment and gather initial requirements.'
   },
   {
     icon: Home,
-    number: '02', 
-    title: 'Free site visit & assessment',
+    title: 'Make Your Design', 
     description: 'Our expert team visits your home to take measurements and understand your specific needs and preferences.'
   },
   {
     icon: FileText,
-    number: '03',
-    title: 'Receive 3D designs & quotations',
+    title: 'Rebuild Design',
     description: 'Get detailed 3D visualizations and transparent pricing to guide your decision—all at no cost.'
   }
 ];
 
 export const ProcessSection: React.FC = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 relative">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg)'
+        }}
+      >
+        <div className="absolute inset-0 bg-slate-800/85"></div>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Here's What Happens{' '}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                After You Book
-              </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              How We Work
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our streamlined process ensures you get the best results with minimal hassle
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+              Our streamlined process ensures you get the best results with minimal hassle. 
+              From initial contact to final installation.
             </p>
           </div>
 
@@ -44,30 +50,26 @@ export const ProcessSection: React.FC = () => {
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div 
-                  key={index}
-                  className="relative text-center"
-                >
-                  {/* Connection Line */}
+                <div key={index} className="relative">
+                  {/* Arrow connector */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-accent to-primary transform translate-x-4 z-0" />
+                    <div className="hidden md:flex absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+                      <ArrowRight className="h-8 w-8 text-white" />
+                    </div>
                   )}
                   
-                  <div className="relative z-10 bg-background p-8 rounded-2xl shadow-card hover:shadow-elegant transition-all duration-300">
-                    <div className="relative mb-6">
-                      <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-4">
-                        <Icon className="h-10 w-10 text-white" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-primary font-bold text-sm">
-                        {step.number}
-                      </div>
+                  {/* Process Card */}
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl text-center hover:bg-white/15 transition-all duration-300 group">
+                    {/* Icon Container */}
+                    <div className="w-20 h-20 mx-auto mb-6 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                      <Icon className="h-10 w-10 text-white" />
                     </div>
                     
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       {step.title}
                     </h3>
                     
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -80,6 +82,7 @@ export const ProcessSection: React.FC = () => {
             <Button 
               variant="hero" 
               size="xl"
+              className="bg-white text-slate-800 hover:bg-gray-100"
               asChild
             >
               <a 

@@ -39,7 +39,7 @@ export const AboutSection: React.FC = () => {
 
           <div className="text-left text-white mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Why Impact Woods?
+              About Impact Woods
             </h2>
 
             <div className="max-w-4xl mx-auto">

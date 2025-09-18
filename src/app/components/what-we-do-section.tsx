@@ -3,31 +3,24 @@ import { Utensils, Monitor, RotateCcw, Settings } from 'lucide-react';
 
 const services = [
   {
-    icon: Utensils,
-    title: 'Kitchen Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.',
-    learnMore: 'Learn More',
-    className: 'bg-background border border-border'
-  },
-  {
     icon: Monitor,
-    title: 'Custom Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.',
-    learnMore: 'Learn More',
+    title: 'Completely Risk-Free Experience',
+    description: 'Free site visit, 3D design visualization, and detailed quotation. Zero upfront costs, zero obligations until you\'re 100% satisfied.',
+    learnMore: 'Book Now',
     className: 'bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] text-white'
   },
   {
     icon: RotateCcw,
-    title: 'Rebuild Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.',
-    learnMore: 'Learn More',
+    title: '13+ Years of Ugandan Excellence',
+    description: 'Over 500 satisfied homeowners across Kampala, Wakiso, and Mukono trust us with their most important spaces since 2011.',
+    learnMore: 'Book Now',
     className: 'bg-background border border-border'
   },
   {
     icon: Settings,
-    title: 'Installation',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec.',
-    learnMore: 'Learn More',
+    title: 'Precision-Crafted for Your Life',
+    description: 'Every kitchen, closet, and door is custom-designed to match your exact lifestyle, space requirements, and aesthetic preferences.',
+    learnMore: 'Book Now',
     className: 'bg-background border border-border'
   }
 ];
@@ -36,17 +29,8 @@ export const WhatWeDoSection: React.FC = () => {
   return (
     <section id="what-we-do" className="py-20 bg-background">
       <div className="container mx-auto px-8 max-w-6xl lg:px-8">
-        {/* <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            What We Do
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus 
-            nec ullamcorper mattis, pulvinar dapibus leo.
-          </p>
-        </div> */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-row gap-6 justify-center">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
         <div className="basis-[50%]">
           <div className="flex flex-row items-center gap-3">
-            <div className="relative w-[300px] h-[500px] rounded-t-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
+            <div className="relative w-[300px] h-[500px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
                 alt="Modern luxury kitchen interior"

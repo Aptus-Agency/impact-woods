@@ -44,7 +44,7 @@ export const ProductsSection: React.FC = () => {
                 key={index}
                 className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105"
               >
-                <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-2xl", index === 1 && "rounded-t-[200px]", index === 2 && "rounded-[200px]")}>
+                <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
                   <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

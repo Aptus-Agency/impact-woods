@@ -55,14 +55,6 @@ export const TestimonialsSection: React.FC = () => {
                 </p>
               </div>
 
-              {/* 5 Star Rating Display */}
-              <div className="flex items-center gap-2 mb-8">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                ))}
-                <span className="text-lg font-semibold text-white ml-2">5.0 Rating</span>
-              </div>
-
               {/* Featured Testimonial Quote */}
               <div className="mb-8">
                 <Quote className="h-12 w-12 text-yellow-400 mb-4" />
@@ -85,38 +77,6 @@ export const TestimonialsSection: React.FC = () => {
                     <div className="font-semibold text-white text-lg">{testimonials[0].name}</div>
                     <div className="text-gray-300 text-sm">Client - {testimonials[0].location}</div>
                   </div>
-                </div>
-              </div>
-
-              {/* Additional Testimonial Previews */}
-              <div className="space-y-4">
-                {testimonials.slice(1, 3).map((testimonial, index) => (
-                  <div key={index} className="border-l-4 border-yellow-400 pl-4 py-2">
-                    <p className="text-gray-300 text-sm leading-relaxed mb-2">
-                      "{testimonial.text.substring(0, 80)}..."
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
-                        <Image 
-                          src={testimonial.avatar} 
-                          alt={testimonial.name}
-                          width={24}
-                          height={24}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <span className="text-white text-sm font-medium">{testimonial.name}</span>
-                      <span className="text-gray-400 text-xs">• {testimonial.location}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Trust Badge */}
-              <div className="mt-8 pt-6 border-t border-gray-600">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 font-medium text-sm">Trusted by 500+ Uganda homeowners</span>
                 </div>
               </div>
             </div>
