@@ -19,9 +19,9 @@ export default function Home() {
       <AboutSection />
       <WhatWeDoSection />
       <ProductsSection />
+      <ProcessSection />
       <WhyChooseUsSection />
       <TestimonialsSection />
-      <ProcessSection />
       <ContactSection />
       <Footer />
     </div>

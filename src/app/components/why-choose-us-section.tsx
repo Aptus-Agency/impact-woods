@@ -29,7 +29,7 @@ export const WhyChooseUsSection: React.FC = () => {
               <div
                 className="w-full h-full rounded-l-[200px] overflow-hidden bg-cover bg-center shadow-lg"
                 style={{
-                  backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg)'
+                  backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1758229242/impact-woods/eauusv8fovcyoqdux2ur.jpg)'
                 }}
               >
               </div>

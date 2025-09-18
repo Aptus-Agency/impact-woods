@@ -5,17 +5,17 @@ import { cn } from '../lib/utils';
 const products = [
   {
     title: 'Doors & Frames',
-    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227966/impact-woods/tfrn3dsjjh38qwuwbg2g.jpg',
     description: 'Premium wooden doors and frames crafted for durability and elegance'
   },
   {
     title: 'Closets',
-    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227773/impact-woods/m16lro4q7ydbae9sikss.jpg',
     description: 'Custom closet solutions that maximize space and organization'
   },
   {
     title: 'Kitchen Cabinets',
-    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758228709/impact-woods/ww9ci6ucjhddmpsh6pth.jpg',
     description: 'Modern kitchen cabinets designed for functionality and style'
   }
 ];
