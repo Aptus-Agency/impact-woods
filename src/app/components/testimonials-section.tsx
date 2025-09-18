@@ -95,7 +95,7 @@ export const TestimonialsSection: React.FC = () => {
                     className=''
                   >
                     <blockquote className="text-xl md:text-2xl font-medium text-white leading-relaxed mb-6">
-                      "{currentTestimonial.text}"
+                      &quot;{currentTestimonial.text}&quot;
                     </blockquote>
                     
                     {/* Customer Info */}

@@ -104,7 +104,7 @@ export const ContactSection: React.FC = () => {
                   Ready to Start Your Project?
                 </h3>
                 <p className="text-muted-foreground mb-8">
-                  Book your free site visit today and let's bring your vision to life. 
+                  Book your free site visit today and let&apos;s bring your vision to life. 
                   No obligations, just expert advice and beautiful designs.
                 </p>
                 

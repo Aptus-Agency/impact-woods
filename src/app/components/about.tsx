@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Award, Users, Clock } from 'lucide-react';
+import { CheckCircle, Award, Users } from 'lucide-react';
 import Image from 'next/image';
 
 const highlights = [
@@ -48,8 +48,8 @@ export const AboutSection: React.FC = () => {
               </p>
 
               <p>
-                Why work with us? Because we genuinely care. We care that you get the right product—one that's durable and built to last. We care to deliver everything we've promised and more. We care to listen when challenges arise and make things right, using every experience to improve. Most importantly, we care enough to ensure you get your full money's worth.
-                We're here to simplify your life.
+                Why work with us? Because we genuinely care. We care that you get the right product—one that&apos;s durable and built to last. We care to deliver everything we&apos;ve promised and more. We care to listen when challenges arise and make things right, using every experience to improve. Most importantly, we care enough to ensure you get your full money&apos;s worth.
+                We&apos;re here to simplify your life.
               </p>
             </div>
           </div>
