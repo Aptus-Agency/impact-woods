@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
                 and frames since 2011. Quality craftsmanship, hassle-free service.
               </p>
               <div className="text-sm text-primary-foreground/60">
-                © 2024 Impact Woods. All rights reserved.
+                © {new Date().getFullYear()} Impact Woods. All rights reserved.
               </div>
             </div>
 

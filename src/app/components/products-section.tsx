@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { cn } from '../lib/utils';
-import { ProductModal } from './product-modal'; 
+import { ProductModal } from './product-modal';
+import { motion } from 'framer-motion';
 
 const products = [
   {
@@ -23,6 +24,25 @@ const products = [
   }
 ];
 
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  },
+};
+
 export const ProductsSection: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
 
@@ -39,7 +59,13 @@ export const ProductsSection: React.FC = () => {
       <section id="products" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+            >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Our{' '}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -50,14 +76,21 @@ export const ProductsSection: React.FC = () => {
                 Discover our range of premium wooden products, each designed and crafted 
                 to transform your home with style and functionality.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid md:grid-cols-3 gap-8"
+              variants={gridContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {products.map((product, index) => (
-                <div 
+                <motion.div 
                   key={index}
                   className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105 cursor-pointer"
                   onClick={() => openModal(product)}
+                  variants={cardVariants}
                 >
                   <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
                     <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -72,9 +105,9 @@ export const ProductsSection: React.FC = () => {
                       {product.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="text-center mt-12">
               <p className="text-lg text-muted-foreground mb-6">

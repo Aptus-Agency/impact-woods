@@ -1,6 +1,41 @@
+'use client';
+
 import { Button } from "./button";
 import { Navigation } from "./navigation";
 import Image from "next/image";
+import { AnimationGeneratorType, motion } from 'framer-motion';
+
+// Animation variants for the text content
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { type: 'spring' as AnimationGeneratorType, stiffness: 100 }
+  },
+};
+
+// Animation variants for the image section
+const imageContainerVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8 }
+  }
+};
+
 
 export const HeroSection = () => {
   return (
@@ -9,17 +44,31 @@ export const HeroSection = () => {
 
       <div className="relative mx-auto max-w-6xl flex flex-col lg:flex-row items-center justify-between z-10">
         {/* Left Content */}
-        <div className="flex-1 mb-12 lg:mb-0 basis-[50%]">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+        <motion.div 
+          className="flex-1 mb-12 lg:mb-0 basis-[50%]"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1 
+            className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight"
+            variants={itemVariants}
+          >
             Transform your home with<br />
             <span className="text-secondary">Hassle free Craftsmanship</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg text-primary-foreground/80 mb-8 max-w-md leading-relaxed">
+          <motion.p 
+            className="text-lg text-primary-foreground/80 mb-8 max-w-md leading-relaxed"
+            variants={itemVariants}
+          >
             From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md"
+            variants={itemVariants}
+          >
             <Button variant="hero" size="lg" className="rounded-full px-8" asChild>
               <a href="https://forms.google.com">
                 Book My Free site Visit
@@ -30,10 +79,15 @@ export const HeroSection = () => {
                 Chat With Us now
               </a>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="basis-[50%]">
+        <motion.div 
+          className="basis-[50%]"
+          variants={imageContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="flex flex-row items-center gap-3">
             <div className="relative w-[400px] h-[600px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
               <Image
@@ -41,6 +95,7 @@ export const HeroSection = () => {
                 alt="Modern luxury kitchen interior"
                 fill
                 className="object-cover w-full h-full"
+                priority // Added priority to preload the main hero image
               />
             </div>
 
@@ -53,7 +108,7 @@ export const HeroSection = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

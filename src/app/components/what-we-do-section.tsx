@@ -1,6 +1,5 @@
 import React from 'react';
-import { RotateCcw, Settings, ShieldCheck } from 'lucide-react';
-import { button } from 'framer-motion/client';
+import { ShieldCheck } from 'lucide-react';
 
 const services = [
   {

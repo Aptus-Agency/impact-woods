@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
-import { CheckCircle, Globe, Wrench, Monitor, Hammer } from 'lucide-react';
+import { CheckCircle, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const benefits = [
   {
@@ -19,12 +22,39 @@ const benefits = [
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  },
+};
+
+
 export const WhyChooseUsSection: React.FC = () => {
   return (
     <section id="why-choose-us" className="py-20 bg-muted/30">
       <div className="container mx-auto px-8 max-w-6xl lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="relative w-full h-[800px] max-h-[800px]">
               <div
                 className="w-full h-full rounded-l-[200px] overflow-hidden bg-cover bg-center shadow-lg"
@@ -34,19 +64,36 @@ export const WhyChooseUsSection: React.FC = () => {
               >
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right side - Content */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <motion.h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+                variants={itemVariants}
+              >
                 Why Impact Woods
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              </motion.h2>
+              <motion.p 
+                className="text-lg text-muted-foreground mb-8"
+                variants={itemVariants}
+              >
                 At Impact Woods, we believe your home should inspire comfort, beauty, and functionality. For over a decade, we&apos;ve specialized in crafting premium kitchens, closets, doors, and frames designed to simplify life. 
-              </p>
+              </motion.p>
 
-              <p className="text-xl text-muted-foreground"><span className="font-semibold text-foreground">Our promise is simple:</span> hassle-free design, precision installation, and long-lasting quality.</p>
+              <motion.p 
+                className="text-xl text-muted-foreground"
+                variants={itemVariants}
+              >
+                <span className="font-semibold text-foreground">Our promise is simple:</span> hassle-free design, precision installation, and long-lasting quality.
+              </motion.p>
             </div>
 
             {/* Benefits list */}
@@ -54,7 +101,7 @@ export const WhyChooseUsSection: React.FC = () => {
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={index} className="flex gap-4">
+                  <motion.div key={index} className="flex gap-4" variants={itemVariants}>
                     <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
@@ -66,11 +113,11 @@ export const WhyChooseUsSection: React.FC = () => {
                         {benefit.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
