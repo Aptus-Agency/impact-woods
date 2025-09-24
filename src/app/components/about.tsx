@@ -27,7 +27,7 @@ export const AboutSection: React.FC = () => {
         <div className="mx-auto flex flex-row items-center gap-8">
           <div className="relative">
             {/* Image container that extends beyond the parent */}
-            <div className="relative w-[400px] h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF] mt-[-120px]">
+            <div className="relative w-[400px] h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF] mt-[-160px]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
                 alt="Modern luxury kitchen interior"
@@ -47,7 +47,7 @@ export const AboutSection: React.FC = () => {
                 At Impact Woods, we believe in simplifying life for you through products that truly work. We create appealing kitchen cabinets, closets, and doors with modern designs that are simply timeless, while giving you a fully simplified experience every step of the way.
               </p>
 
-              <p>
+              <p className="text-lg md:text-xl text-white leading-relaxed">
                 Why work with us? Because we genuinely care. We care that you get the right product—one that&apos;s durable and built to last. We care to deliver everything we&apos;ve promised and more. We care to listen when challenges arise and make things right, using every experience to improve. Most importantly, we care enough to ensure you get your full money&apos;s worth.
                 We&apos;re here to simplify your life.
               </p>

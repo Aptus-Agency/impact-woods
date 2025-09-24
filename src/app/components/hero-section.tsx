@@ -20,18 +20,22 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
-            <Button variant="hero" size="lg" className="rounded-full px-8">
-              Book My Free site Visit
-            </Button>
-            <Button variant="hero" size="lg" className="rounded-full px-8 bg-secondary text-primary-foreground">
-              Chat With Us now
-            </Button>
+            <a href="https://forms.google.com">
+              <Button variant="hero" size="lg" className="rounded-full px-8">
+                Book My Free site Visit
+              </Button>
+            </a>
+            <a href="https://wa.me/256752993659">
+              <Button variant="hero" size="lg" className="rounded-full px-8 bg-secondary text-coral">
+                Chat With Us now
+              </Button>
+            </a>
           </div>
         </div>
 
         <div className="basis-[50%]">
           <div className="flex flex-row items-center gap-3">
-            <div className="relative w-[300px] h-[500px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
+            <div className="relative w-[400px] h-[600px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg'}
                 alt="Modern luxury kitchen interior"

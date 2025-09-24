@@ -1,5 +1,6 @@
 import React from 'react';
 import { RotateCcw, Settings, ShieldCheck } from 'lucide-react';
+import { button } from 'framer-motion/client';
 
 const services = [
   {
@@ -50,10 +51,12 @@ export const WhatWeDoSection: React.FC = () => {
                   {service.description}
                 </p>
                 
-                <button className={`flex items-center gap-2 font-medium hover:gap-3 transition-all duration-200 ${service.className.includes('text-white') ? 'text-white hover:text-gray-200' : 'text-foreground hover:text-primary'}`}>
-                  <span>→</span>
-                  {service.learnMore}
-                </button>
+                <a href="https://forms.google.com">
+                  <button className={`flex items-center gap-2 font-medium hover:gap-3 transition-all duration-200 ${service.className.includes('text-white') ? 'text-white hover:text-gray-200' : 'text-foreground hover:text-primary'}`}>
+                    <span>→</span>
+                    {service.learnMore}
+                  </button>
+                </a>
               </div>
             );
           })}

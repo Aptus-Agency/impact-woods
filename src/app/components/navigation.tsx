@@ -50,10 +50,12 @@ export const Navigation: React.FC = () => {
             </div>
 
             <div>
-            <Button variant="hero" className="rounded-full px-8 bg-secondary" size="lg">
-              Contact
-            </Button>
-          </div>
+              <a href="#contact">
+                <Button variant="hero" className="rounded-full px-8 bg-secondary text-coral" size="lg">
+                  Contact
+                </Button>
+              </a>
+            </div>
           </div>
 
         </div>

@@ -6,17 +6,17 @@ const steps = [
   {
     icon: MessageCircle,
     title: 'Confirmation Via WhatsApp',
-    description: 'Within minutes of booking, our project coordinator reaches out via WhatsApp to confirm your appointment, discuss your vision, and answer any initial questions. '
+    description: "Within minutes of booking, our project coordinator reaches out via WhatsApp to confirm your appointment, discuss your vision, and answer any initial questions."
   },
   {
     icon: Home,
     title: 'Free Site Visit & Professional Assessment', 
-    description: 'Our experienced craftsmen visit your home with professional measuring tools and design tablets. We&rsquo;ll assess your space, understand your lifestyle needs, take precise measurements, and discuss material options'
+    description: "Our experienced craftsmen visit your home with professional measuring tools and design tablets. We'll assess your space, take precise measurements, and discuss material options"
   },
   {
     icon: FileText,
     title: '3D Designs & Transparent Pricing',
-    description: 'Receive photorealistic 3D visualizations of your future space plus itemized quotations with no hidden fees. See exactly how your investment transforms your home before making any commitment. Revisions? Absolutely free until it&rsquo;s perfect.'
+    description: "Receive photorealistic 3D visualizations of your future space plus itemized quotations with no hidden fees. See exactly how your investment transforms your home before making any commitment. Revisions? Absolutely free until it's perfect."
   }
 ];
 

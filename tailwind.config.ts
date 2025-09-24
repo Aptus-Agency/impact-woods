@@ -28,8 +28,8 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(var(--brand-gold))",
+          foreground: "hsl(var(--brand-gold))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -60,6 +60,10 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        coral: {
+          DEFAULT: "hsl(var(--brand-coral))",
+          foreground: "hsl(var(--brand-coral))",
         },
       },
       borderRadius: {
