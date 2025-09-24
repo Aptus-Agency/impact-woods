@@ -20,16 +20,16 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md">
-            <a href="https://forms.google.com">
-              <Button variant="hero" size="lg" className="rounded-full px-8">
+            <Button variant="hero" size="lg" className="rounded-full px-8" asChild>
+              <a href="https://forms.google.com">
                 Book My Free site Visit
-              </Button>
-            </a>
-            <a href="https://wa.me/256752993659">
-              <Button variant="hero" size="lg" className="rounded-full px-8 bg-secondary text-coral">
+              </a>
+            </Button>
+            <Button variant="hero" size="lg" className="rounded-full px-8 bg-secondary text-coral" asChild>
+              <a href="https://wa.me/256752993659">
                 Chat With Us now
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
 

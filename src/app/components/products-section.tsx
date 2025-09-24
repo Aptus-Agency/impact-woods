@@ -1,73 +1,91 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { cn } from '../lib/utils';
+import { ProductModal } from './product-modal'; 
 
 const products = [
   {
     title: 'Doors & Frames',
     image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227966/impact-woods/tfrn3dsjjh38qwuwbg2g.jpg',
-    description: 'Premium wooden doors and frames crafted for durability and elegance'
+    description: 'Secure and stylish entryways. Our custom-made doors and frames add a touch of modern elegance to any home.'
   },
   {
     title: 'Closets',
     image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227773/impact-woods/m16lro4q7ydbae9sikss.jpg',
-    description: 'Custom closet solutions that maximize space and organization'
+    description: 'Smart, space-saving storage. We design and install bespoke closets that organize your life and elevate your room.'
   },
   {
     title: 'Kitchen Cabinets',
     image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758228709/impact-woods/ww9ci6ucjhddmpsh6pth.jpg',
-    description: 'Modern kitchen cabinets designed for functionality and style'
+    description: 'The heart of your home, perfected. Our durable, chic kitchen cabinets are crafted to fit your lifestyle and culinary needs.'
   }
 ];
 
 export const ProductsSection: React.FC = () => {
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+
+  const openModal = (product: typeof products[0]) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   return (
-    <section id="products" className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Our{' '}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Products
-              </span>
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our range of premium wooden products, each designed and crafted 
-              to transform your home with style and functionality.
-            </p>
-          </div>
+    <>
+      <section id="products" className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Our{' '}
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Products
+                </span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                Discover our range of premium wooden products, each designed and crafted 
+                to transform your home with style and functionality.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <div 
-                key={index}
-                className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105"
-              >
-                <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
-                  <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="grid md:grid-cols-3 gap-8">
+              {products.map((product, index) => (
+                <div 
+                  key={index}
+                  className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105 cursor-pointer"
+                  onClick={() => openModal(product)}
+                >
+                  <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
+                    <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
+                      {product.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {product.description}
+                    </p>
+                  </div>
                 </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {product.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {product.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-12">
-            <p className="text-lg text-muted-foreground mb-6">
-              Want to see our work in action? Check out our portfolio of completed projects.
-            </p>
+            <div className="text-center mt-12">
+              <p className="text-lg text-muted-foreground mb-6">
+                Want to see our work in action? Check out our portfolio of completed projects.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
+      <ProductModal product={selectedProduct} onClose={closeModal} />
+    </>
   );
 };
