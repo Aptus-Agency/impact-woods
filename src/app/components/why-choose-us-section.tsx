@@ -55,9 +55,9 @@ export const WhyChooseUsSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative w-full h-[800px] max-h-[800px]">
+            <div className="relative w-full h-[400px] max-h-[400px] md:h-[600px] md:max-h-[600px]">
               <div
-                className="w-full h-full rounded-l-[200px] overflow-hidden bg-cover bg-center shadow-lg"
+                className="w-full h-full md:h-full md:max-h-full rounded-2xl md:rounded-l-[200px] overflow-hidden bg-cover bg-center shadow-lg"
                 style={{
                   backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1758229242/impact-woods/eauusv8fovcyoqdux2ur.jpg)'
                 }}
