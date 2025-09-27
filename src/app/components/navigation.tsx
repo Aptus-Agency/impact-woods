@@ -3,6 +3,7 @@
 import React from 'react';
 import { Button } from './button';
 import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 
 interface NavItem {
   name: string;
@@ -56,12 +57,28 @@ export const Navigation: React.FC = () => {
               </a>
             </div>
           </div>
-
+          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
                 item.isButton ? (
@@ -78,13 +95,18 @@ export const Navigation: React.FC = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                    className="block px-3 py-2 text-white hover:text-primary transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </a>
                 )
               ))}
+                <a href="#contact">
+                <Button variant="hero" className="rounded-full px-8 bg-secondary text-coral w-full" size="lg">
+                  Contact
+                </Button>
+              </a>
             </div>
           </div>
         )}
