@@ -28,7 +28,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-md rounded-2xl bg-background p-6 shadow-lg md:max-w-4xl md:p-8"
+            className="relative w-full max-w-[95vw] sm:max-w-md md:max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-background p-6 shadow-lg md:p-8"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -67,4 +67,5 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     </AnimatePresence>
   );
 };
+
 
