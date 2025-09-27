@@ -33,7 +33,7 @@ const textItemVariants = {
 export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-12 md:py-20 bg-muted/30 relative">
-      <div className="container mx-auto rounded-lg max-w-6xl p-2 md:p-24 bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative mt-5">
+      <div className="container mx-auto md:rounded-lg max-w-6xl p-6 md:p-16 bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative mt-5">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-center md:gap-8">
           <motion.div 
             className="relative"
@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             {/* Image container that extends beyond the parent */}
-            <div className="relative w-[200px] h-[250px] md:w-[400px] md:h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF] md:mt-[-160px]">
+            <div className="relative w-[250px] h-[300px] md:w-[400px] md:h-[500px] rounded-b-[200px] overflow-hidden border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF] md:mt-[-160px]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616151/impact-woods/qetcm5ezqpebxnmxgaun.jpg'}
                 alt="Modern luxury kitchen interior"

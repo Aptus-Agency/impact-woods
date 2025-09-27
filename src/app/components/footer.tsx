@@ -5,15 +5,15 @@ export const Footer: React.FC = () => {
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="text-2xl font-bold mb-4">Impact Woods</div>
-              <p className="text-primary-foreground/80 mb-4 max-w-md">
+              <p className="text-primary-foreground/80 mb-4 max-w-md mx-auto md:mx-0">
                 Transforming homes across Uganda with premium kitchens, closets, doors, 
                 and frames since 2011. Quality craftsmanship, hassle-free service.
               </p>
-              <div className="text-sm text-primary-foreground/60">
+              <div className="text-sm text-primary-foreground/60 hidden md:block">
                 © {new Date().getFullYear()} Impact Woods. All rights reserved.
               </div>
             </div>
