@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 import { Button } from './button';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 interface Product {
   title: string;
@@ -15,39 +17,54 @@ interface ProductModalProps {
 }
 
 export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
-  if (!product) {
-    return null;
-  }
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="relative w-full max-w-5xl rounded-2xl bg-background p-8 shadow-lg">
-        <button
+    <AnimatePresence>
+      {product && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute -top-4 -right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white"
-          aria-label="Close modal"
         >
-          <X className="h-6 w-6" />
-        </button>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="overflow-hidden rounded-lg md:h-auto">
-            <Image src={product.image} alt={product.title} width={800} height={800} className="object-cover" />
-          </div>
-
-          <div className="flex flex-col justify-start items-start">
-            <h3 className="mb-3 text-2xl font-semibold text-foreground">{product.title}</h3>
-            <p className="mb-6 text-muted-foreground">{product.description}</p>
-            <Button
-              asChild
-              className="mt-auto w-full"
+          <motion.div
+            className="relative w-full max-w-md rounded-2xl bg-background p-6 shadow-lg md:max-w-4xl md:p-8"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            onClick={(e) => e.stopPropagation()} // Prevents modal from closing when clicking inside
+          >
+            <button
               onClick={onClose}
+              className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-muted text-foreground hover:bg-muted/80"
+              aria-label="Close modal"
             >
-              <a href="#contact">Book Now</a>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              <div className="relative h-48 overflow-hidden rounded-lg md:h-auto">
+                <Image src={product.image} alt={product.title} layout="fill" className="object-cover" />
+              </div>
+
+              <div className="flex flex-col items-start justify-center">
+                <h3 className="mb-2 text-xl font-semibold text-foreground md:text-2xl">{product.title}</h3>
+                <p className="mb-4 text-sm text-muted-foreground md:text-base">{product.description}</p>
+                <Button
+                  asChild
+                  className="mt-auto w-full"
+                  onClick={onClose}
+                  size="sm"
+                >
+                  <a href="#contact">Book Now</a>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
+

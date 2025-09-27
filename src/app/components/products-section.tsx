@@ -56,30 +56,30 @@ export const ProductsSection: React.FC = () => {
 
   return (
     <>
-      <section id="products" className="py-20 bg-background">
+      <section id="products" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div 
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
                 Our{' '}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Products
                 </span>
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Discover our range of premium wooden products, each designed and crafted 
                 to transform your home with style and functionality.
               </p>
             </motion.div>
 
             <motion.div 
-              className="grid md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
               variants={gridContainerVariants}
               initial="hidden"
               whileInView="visible"
@@ -88,11 +88,11 @@ export const ProductsSection: React.FC = () => {
               {products.map((product, index) => (
                 <motion.div 
                   key={index}
-                  className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105 cursor-pointer"
+                  className="group bg-background rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 md:hover:scale-105 cursor-pointer"
                   onClick={() => openModal(product)}
                   variants={cardVariants}
                 >
-                  <div className={cn("relative h-[300px] w-[full] overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
+                  <div className={cn("relative h-[250px] md:h-[300px] w-full overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
                     <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

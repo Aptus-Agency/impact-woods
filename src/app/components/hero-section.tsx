@@ -39,34 +39,34 @@ const imageContainerVariants = {
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative overflow-hidden">
+    <section className="min-h-screen bg-[linear-gradient(333deg,rgba(166,35,23,1)_0%,rgba(217,137,108,1)_100%)] relative overflow-hidden">
       <Navigation />
 
-      <div className="relative mx-auto max-w-6xl flex flex-col lg:flex-row items-center justify-between z-10">
+      <div className="relative mx-auto max-w-6xl flex flex-col lg:flex-row items-center justify-between z-10 px-4">
         {/* Left Content */}
         <motion.div 
-          className="flex-1 mb-12 lg:mb-0 basis-[50%]"
+          className="flex-1 mb-12 lg:mb-0 lg:basis-[50%] text-center lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
             Transform your home with<br />
-            <span className="text-secondary">Hassle free Craftsmanship</span>
+            <span className="text-secondary">Hassle-free Craftsmanship</span>
           </motion.h1>
 
           <motion.p 
-            className="text-lg text-primary-foreground/80 mb-8 max-w-md leading-relaxed"
+            className="text-lg text-primary-foreground/80 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed"
             variants={itemVariants}
           >
             From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md"
+            className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md mx-auto lg:mx-0"
             variants={itemVariants}
           >
             <Button variant="hero" size="lg" className="rounded-full px-8" asChild>
@@ -83,13 +83,13 @@ export const HeroSection = () => {
         </motion.div>
 
         <motion.div 
-          className="basis-[50%]"
+          className="lg:basis-[50%]"
           variants={imageContainerVariants}
           initial="hidden"
           animate="visible"
         >
-          <div className="flex flex-row items-center gap-3">
-            <div className="relative w-[400px] h-[600px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="relative w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg'}
                 alt="Modern luxury kitchen interior"
@@ -99,7 +99,7 @@ export const HeroSection = () => {
               />
             </div>
 
-            <div className="relative w-[200px] h-[300px] rounded-t-[200px] rounded-b-[200px] overflow-hidden">
+            <div className="hidden md:block relative w-[150px] h-[225px] sm:w-[200px] sm:h-[300px] rounded-t-[200px] rounded-b-[200px] overflow-hidden">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1758228709/impact-woods/ww9ci6ucjhddmpsh6pth.jpg'}
                 alt="Contemporary kitchen island design"

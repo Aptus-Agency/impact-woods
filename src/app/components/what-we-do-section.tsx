@@ -27,16 +27,16 @@ const services = [
 
 export const WhatWeDoSection: React.FC = () => {
   return (
-    <section id="what-we-do" className="py-20 bg-background">
-      <div className="container mx-auto px-8 max-w-6xl lg:px-8">
+    <section id="what-we-do" className="py-12 md:py-20 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl lg:px-8">
 
-        <div className="flex flex-row gap-6 justify-center">
+        <div className="flex flex-col lg:flex-row gap-6 justify-center">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div 
                 key={index}
-                className={`p-8 rounded-2xl hover:shadow-elegant transition-all duration-300 hover:scale-105 ${service.className}`}
+                className={`p-4 md:p-8 rounded-2xl hover:shadow-elegant transition-all duration-300 lg:hover:scale-105 ${service.className}`}
               >
                 <div className="mb-6">
                   <Icon className={`h-12 w-12 ${service.className.includes('text-white') ? 'text-white' : 'text-primary'}`} />

@@ -101,7 +101,7 @@ export const WhyChooseUsSection: React.FC = () => {
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
-                  <motion.div key={index} className="flex gap-4" variants={itemVariants}>
+                  <motion.div key={index} className="flex flex-col md:flex-row gap-4" variants={itemVariants}>
                     <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
