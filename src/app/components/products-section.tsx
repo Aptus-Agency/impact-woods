@@ -92,7 +92,7 @@ export const ProductsSection: React.FC = () => {
                   onClick={() => openModal(product)}
                   variants={cardVariants}
                 >
-                  <div className={cn("relative h-[250px] md:h-[300px] w-full overflow-hidden", index === 0 && "rounded-t-[200px]", index === 1 && "rounded-2xl", index === 2 && "rounded-[200px]")}>
+                  <div className={cn("relative h-[250px] md:h-[300px] w-full overflow-hidden rounded-2xl")}>
                     <Image src={product.image} alt={product.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

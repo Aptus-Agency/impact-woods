@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { Navigation } from "./navigation";
 import Image from "next/image";
 import { AnimationGeneratorType, motion } from 'framer-motion';
+import Carousel from "./ui/carousel";
 
 // Animation variants for the text content
 const containerVariants = {
@@ -19,8 +20,8 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { type: 'spring' as AnimationGeneratorType, stiffness: 100 }
   },
@@ -44,13 +45,13 @@ export const HeroSection = () => {
 
       <div className="relative mx-auto max-w-6xl flex flex-col lg:flex-row items-center justify-between z-10 px-4">
         {/* Left Content */}
-        <motion.div 
+        <motion.div
           className="flex-1 mb-12 lg:mb-0 lg:basis-[50%] text-center lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight"
             variants={itemVariants}
           >
@@ -58,14 +59,14 @@ export const HeroSection = () => {
             <span className="text-secondary">Hassle-free Craftsmanship</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             className="text-lg text-primary-foreground/80 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed"
             variants={itemVariants}
           >
             From Modern kitchens, Closets, TV units & Doors, thoughtfully crafted and installed seamlessly
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 mb-12 max-w-md mx-auto lg:mx-0"
             variants={itemVariants}
           >
@@ -82,32 +83,17 @@ export const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="lg:basis-[50%]"
           variants={imageContainerVariants}
           initial="hidden"
           animate="visible"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <div className="relative w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] rounded-t-[200px] overflow-hidden z-10 border-solid border-[10px] border-transparent shadow-[0px_0px_1px_0px_#FFFFFF]">
-              <Image
-                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg'}
-                alt="Modern luxury kitchen interior"
-                fill
-                className="object-cover w-full h-full"
-                priority // Added priority to preload the main hero image
-              />
-            </div>
-
-            <div className="hidden md:block relative w-[150px] h-[225px] sm:w-[200px] sm:h-[300px] rounded-t-[200px] rounded-b-[200px] overflow-hidden">
-              <Image
-                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1758228709/impact-woods/ww9ci6ucjhddmpsh6pth.jpg'}
-                alt="Contemporary kitchen island design"
-                fill
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
+          <Carousel showNavigation={false}>
+            <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg" alt="Hero" width={1000} height={1000} />
+            <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg" alt="Hero" width={1000} height={1000} />
+            <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1758227774/impact-woods/yqs7bzwxgr9r9kzgtnrq.jpg" alt="Hero" width={1000} height={1000} />
+          </Carousel>
         </motion.div>
       </div>
     </section>

@@ -44,7 +44,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
             </button>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-              <div className="relative h-48 overflow-hidden rounded-lg md:h-auto">
+              <div className="relative h-48 md:h-[500px] overflow-hidden rounded-lg">
                 <Image src={product.image} alt={product.title} layout="fill" className="object-cover" />
               </div>
 
