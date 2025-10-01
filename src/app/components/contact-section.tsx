@@ -27,9 +27,11 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' }
+  { icon: '/facebook.svg', href: 'https://www.facebook.com/ImpactWoodsLtd', label: 'Facebook' },
+  { icon: '/instagram.svg', href: 'https://www.instagram.com/impactwoodsltd/', label: 'Instagram' },
+  { icon: '/x.svg', href: 'https://x.com/ImpactWoods', label: 'Twitter' },
+  { icon: '/youtube.svg', href: 'https://www.youtube.com/@ImpactWoods', label: 'Youtube' },
+  { icon: '/linkedin.svg', href: 'https://www.linkedin.com/company/impact-woods', label: 'Linkedin' }
 ];
 
 const containerVariants = {
@@ -73,11 +75,8 @@ export const ContactSection: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Get In{' '}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Touch
-              </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-crimson mb-6">
+              Get In Touch
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Ready to transform your home? Contact us today for your free consultation and site visit.
@@ -137,7 +136,7 @@ export const ContactSection: React.FC = () => {
                         className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300"
                         aria-label={social.label}
                       >
-                        <Icon className="h-5 w-5" />
+                        <img src={social.icon} alt={social.label} className="h-5 w-5 hover:text-white" />
                       </a>
                     );
                   })}

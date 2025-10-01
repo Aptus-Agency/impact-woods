@@ -59,7 +59,7 @@ export const WhyChooseUsSection: React.FC = () => {
               <div
                 className="w-full h-full md:h-full md:max-h-full rounded-2xl md:rounded-l-[200px] overflow-hidden bg-cover bg-center shadow-lg"
                 style={{
-                  backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1758229242/impact-woods/eauusv8fovcyoqdux2ur.jpg)'
+                  backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1757616146/impact-woods/hy9x2wcj71k8tkft3f5s.jpg)'
                 }}
               >
               </div>
@@ -76,7 +76,7 @@ export const WhyChooseUsSection: React.FC = () => {
           >
             <div>
               <motion.h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-crimson mb-6"
                 variants={itemVariants}
               >
                 Why Impact Woods

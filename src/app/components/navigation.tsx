@@ -69,7 +69,7 @@ export const Navigation: React.FC = () => {
 
             <div>
               <a href="#contact">
-                <Button variant="hero" className="rounded-full px-8 bg-secondary text-coral" size="lg">
+                <Button className="rounded-full px-8 bg-secondary text-crimson">
                   Contact
                 </Button>
               </a>
@@ -137,7 +137,7 @@ export const Navigation: React.FC = () => {
                       </a>
                   ))}
                   <a href="#contact" className='w-full'>
-                    <Button variant="hero" className="rounded-full px-8 bg-secondary text-coral w-full mt-4" size="lg">
+                    <Button variant="hero" className="rounded-full px-8 bg-secondary text-crimson w-full mt-4" size="lg">
                       Contact
                     </Button>
                   </a>

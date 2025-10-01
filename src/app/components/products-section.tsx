@@ -19,7 +19,7 @@ const products = [
   },
   {
     title: 'Kitchen Cabinets',
-    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1758228709/impact-woods/ww9ci6ucjhddmpsh6pth.jpg',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1757616146/impact-woods/gzuslvfojmfyrhahkkyo.jpg',
     description: 'The heart of your home, perfected. Our durable, chic kitchen cabinets are crafted to fit your lifestyle and culinary needs.'
   }
 ];
@@ -66,11 +66,8 @@ export const ProductsSection: React.FC = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                Our{' '}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Products
-                </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-crimson mb-4">
+                Our Products
               </h2>
               <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Discover our range of premium wooden products, each designed and crafted 
